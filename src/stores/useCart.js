@@ -18,7 +18,7 @@ export const useCartStore = defineStore ('cart',{
     },
 
     removeItem(id) {
-      this.items = this.items.filter(e => e.id ==! id)
+      this.items = this.items.filter(e => e.id !== id)
     },
 
     increaseQty(id) {

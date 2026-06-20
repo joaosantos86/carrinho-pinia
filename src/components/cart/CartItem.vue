@@ -1,5 +1,7 @@
 <script setup>
+import { useCartStore } from "@/stores/useCart"
 import { formataPreco } from "@/utils/currencyUtils"
+const cartStore = useCartStore()
 const props = defineProps({
   items: {
     items: Object,
@@ -14,16 +16,16 @@ const props = defineProps({
         <h6 class="mb-1">{{ props.items.name }}</h6>
         <p class="text-muted small mb-0">{{ formataPreco(props.items.price) }}</p>
       </div>
-      <button class="btn btn-sm btn-outline-danger">
+      <button @click="cartStore.removeItem(props.items.id)" class="btn btn-sm btn-outline-danger">
         <i class="bi bi-trash"></i>
       </button>
     </div>
     <div class="quantity-control">
-      <button class="btn btn-sm btn-outline-secondary btn-quantity">
+      <button @click="cartStore.decreaseQty(props.items.id)" class="btn btn-sm btn-outline-secondary btn-quantity">
         <i class="bi bi-dash"></i>
       </button>
       <span class="fw-bold">1</span>
-      <button class="btn btn-sm btn-outline-secondary btn-quantity">
+      <button @click="cartStore.increaseQty(props.items.id)" class="btn btn-sm btn-outline-secondary btn-quantity">
         <i class="bi bi-plus"></i>
       </button>
       <span class="ms-auto text-muted">{{ formataPreco(props.items.price) }}</span>
