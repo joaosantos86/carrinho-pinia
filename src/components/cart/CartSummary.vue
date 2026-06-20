@@ -12,7 +12,7 @@ const cartStore = useCartStore();
   <button class="btn btn-success w-100 mb-2">
     <i class="bi bi-check-circle"></i> Finalizar Compra
   </button>
-  <button class="btn btn-outline-secondary w-100">
+  <button @click="cartStore.cleanCart()" class="btn btn-outline-secondary w-100">
     <i class="bi bi-arrow-counterclockwise"></i> Limpar Carrinho
   </button>
 </template>
