@@ -1,6 +1,6 @@
 <script setup>
-import { formataPreco } from '../utils/currencyUtils'
-import { useCartStore } from '../stores/useCart'
+import { formataPreco } from '../../utils/currencyUtils'
+import { useCartStore } from '../../stores/useCart'
 
 const cartStore = useCartStore();
 const props = defineProps({
