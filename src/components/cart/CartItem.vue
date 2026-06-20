@@ -24,11 +24,11 @@ const props = defineProps({
       <button @click="cartStore.decreaseQty(props.items.id)" class="btn btn-sm btn-outline-secondary btn-quantity">
         <i class="bi bi-dash"></i>
       </button>
-      <span class="fw-bold">1</span>
+      <span class="fw-bold">{{ cartStore.itemQty(props.items.id) }}</span>
       <button @click="cartStore.increaseQty(props.items.id)" class="btn btn-sm btn-outline-secondary btn-quantity">
         <i class="bi bi-plus"></i>
       </button>
-      <span class="ms-auto text-muted">{{ formataPreco(props.items.price) }}</span>
+      <span class="ms-auto text-muted">{{ formataPreco(cartStore.itemSubtotal(props.items.id)) }}</span>
     </div>
   </div>
 </template>

@@ -46,6 +46,19 @@ export const useCartStore = defineStore ('cart',{
 
   getters: {
     totalItems: (state) => state.items.reduce((total, item) => total + item.qty, 0),
-    totalPrice: (state) => state.items.reduce((total, item) => total + item.price * item.qty, 0)
+    totalPrice: (state) => state.items.reduce((total, item) => total + item.price * item.qty, 0),
+    itemQty: (state) => {
+      return (id) => {
+        const item = state.items.find(o => o.id === id)
+        return item ? item.qty : 0
+      }
+    },
+    itemSubtotal: (state) => {
+      return (id) => {
+        const item = state.items.find(o => o.id === id)
+        return item ? item.price * item.qty : 0
+      }
+    }
   },
+
 })
