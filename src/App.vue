@@ -1,15 +1,9 @@
 <script setup>
 import ProductList from './components/ProductList.vue';
-import { useCartStore } from './stores/useCart'
-const cartStore = useCartStore();
-
 
 </script>
-
 <template>
-  <pre>
-     {{ cartStore }}
-  </pre>
+
   <div class="container">
     <div class="row mb-4">
       <div class="col">
