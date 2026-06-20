@@ -28,7 +28,7 @@ const cartStore = useCartStore();
           </h5>
 
           <div id="cart-items">
-             <CartItem />
+             <CartItem v-for="item in cartStore.items" :key="item.id" :items="item"/>
           </div>
 
           <div class="border-top pt-3 mt-3">
