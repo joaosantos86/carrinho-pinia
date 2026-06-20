@@ -1,0 +1,54 @@
+$bootstrap-icons-font-dir: "bootstrap-icons/font/fonts";
+
+@import "bootstrap-icons/font/bootstrap-icons";
+
+ody {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+}
+
+.product-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cart-item {
+  border-bottom: 1px solid #dee2e6;
+  padding: 1rem 0;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-summary {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-quantity {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6c757d;
+}
